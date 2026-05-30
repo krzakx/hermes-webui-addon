@@ -12,9 +12,9 @@ init: false
 map:
   - config:rw
 ports:
-  8787/tcp: null
+  8787/tcp: 8787
 ports_description:
-  8787/tcp: Hermes WebUI web interface
+  8787/tcp: Hermes WebUI web interface (for Cloudflare tunnel / direct access)
 options:
   password: ""
   gateway_url: ""
