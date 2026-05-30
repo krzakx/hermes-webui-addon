@@ -9,6 +9,7 @@ arch:
   - amd64
   - aarch64
 init: false
+host_network: true
 map:
   - config:rw
 ports:
@@ -17,9 +18,11 @@ ports_description:
   8787/tcp: Hermes WebUI web interface (for Cloudflare tunnel / direct access)
 options:
   password: ""
-  gateway_url: ""
+  gateway_url: "http://localhost:8642"
+  gateway_api_key: ""
   hermes_home: "/config/.hermes"
 schema:
   password: password?
   gateway_url: str?
+  gateway_api_key: password?
   hermes_home: str?

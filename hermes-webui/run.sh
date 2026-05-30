@@ -20,6 +20,7 @@ export HERMES_CONFIG_PATH=/config/.hermes/config.yaml
 if [ -f /data/options.json ]; then
     PASSWORD=$(python3 -c "import json,sys; d=json.load(open('/data/options.json')); print(d.get('password',''))" 2>/dev/null || true)
     GATEWAY_URL=$(python3 -c "import json,sys; d=json.load(open('/data/options.json')); print(d.get('gateway_url',''))" 2>/dev/null || true)
+    GATEWAY_API_KEY=$(python3 -c "import json,sys; d=json.load(open('/data/options.json')); print(d.get('gateway_api_key',''))" 2>/dev/null || true)
     HERMES_HOME_OPT=$(python3 -c "import json,sys; d=json.load(open('/data/options.json')); print(d.get('hermes_home',''))" 2>/dev/null || true)
 
     [ -n "$PASSWORD" ] && export HERMES_WEBUI_PASSWORD="$PASSWORD"
@@ -32,6 +33,7 @@ if [ -f /data/options.json ]; then
         GATEWAY_URL_CLEAN="${GATEWAY_URL_CLEAN%/}"
         export HERMES_WEBUI_CHAT_BACKEND=gateway
         export HERMES_WEBUI_GATEWAY_BASE_URL="$GATEWAY_URL_CLEAN"
+        [ -n "$GATEWAY_API_KEY" ] && export HERMES_WEBUI_GATEWAY_API_KEY="$GATEWAY_API_KEY"
         echo "  [ok] Gateway mode: $GATEWAY_URL_CLEAN"
     fi
 fi
