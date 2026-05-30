@@ -9,6 +9,8 @@ export HERMES_WEBUI_HOST=0.0.0.0
 export HERMES_WEBUI_PORT=8787
 export HERMES_WEBUI_STATE_DIR=/config/.hermes/webui
 export HERMES_WEBUI_DEFAULT_WORKSPACE=/config
+# HAOS always maps /config from host — hermes-agent lives at /config/.hermes/hermes-agent
+export HERMES_HOME=/config/.hermes
 
 # Read add-on options from HA
 if [ -f /data/options.json ]; then
