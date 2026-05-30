@@ -1,0 +1,25 @@
+name: Hermes WebUI
+version: "1.0.0"
+slug: hermes-webui
+description: >-
+  Browser-based interface for Hermes Agent. Chat, skills, memory,
+  cron jobs, workspace, and more — all from your HA sidebar.
+url: https://github.com/krzakx/hermes-webui-addon
+arch:
+  - amd64
+  - aarch64
+init: false
+map:
+  - config:rw
+ports:
+  8787/tcp: null
+ports_description:
+  8787/tcp: Hermes WebUI web interface
+options:
+  password: ""
+  gateway_url: ""
+  hermes_home: "/config/.hermes"
+schema:
+  password: password?
+  gateway_url: str?
+  hermes_home: str?
