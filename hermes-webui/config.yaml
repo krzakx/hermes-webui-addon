@@ -1,5 +1,5 @@
 name: Hermes WebUI
-version: "1.0.1"
+version: "1.0.2"
 slug: hermes-webui
 description: >-
   Browser-based interface for Hermes Agent. Chat, skills, memory,
